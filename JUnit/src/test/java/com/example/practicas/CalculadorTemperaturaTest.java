@@ -1,23 +1,21 @@
-package com.example;
+package com.example.practicas;
 
 import org.junit.jupiter.api.*;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 
 public class CalculadorTemperaturaTest {
 
-
     private CalculadorTemperatura calculadorTemperatura;
 
-
-    // se ejecuta siempre de cada test case
+    // se instancia calculador de temperatura por cada ciclo
     @BeforeEach
     void setUp(){
         calculadorTemperatura = new CalculadorTemperatura();
         System.out.println("@BeforeEach -> setUP()");
     }
 
+    //se hace un assertAll cual podemos ejecutar una pila de assertEquals
     @Test
     public void TestCalcularTemperatura1 (){
         assertAll(
@@ -28,6 +26,7 @@ public class CalculadorTemperaturaTest {
         System.out.println("ha sido correcto!");
     }
 
+    //y por ultimo dejamos a calcularTemperatura en null
     @AfterEach
     void tearDown(){
         calculadorTemperatura = null;

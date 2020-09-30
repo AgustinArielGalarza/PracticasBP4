@@ -12,26 +12,28 @@ class CalculadoraTest {
     private Calculadora calculadora;
     private static Calculadora calculadoraStatic;
 
-    //se ejecuta al principio y luego nunca mas
+    // Instanciamos Calculadora al arrancar el Test
     @BeforeAll
     public static void beforeAllTest (){
         calculadoraStatic = new Calculadora();
         System.out.println("@BeforeAll -> beforeAllTEst()");
     }
 
-    // se ejecuta siempre de cada test case
+    // Instanciamos Calculadora en cada ciclo de Test
     @BeforeEach
     void setUp(){
         calculadora = new Calculadora();
         System.out.println("@BeforeEach -> setUP()");
     }
 
+    //al terminar cada ciclo dejamos la variable calculadora en null
     @AfterEach
     void tearDown(){
         calculadora = null;
         System.out.println("@AfterEach -> tearDown()");
     }
 
+    //al terminar dejamos la variable calculadora en null
     @AfterAll
     public static void AfterAllTest (){
         calculadoraStatic = null;
@@ -40,19 +42,21 @@ class CalculadoraTest {
 
     @Test
     void calcularNotNullTest() {
-        assertNotNull(calculadoraStatic   ,"Calculadora debe ser not null");
+        //comprabamos que calculadoraStatic no sea null
+        assertNotNull(calculadoraStatic,"Calculadora debe ser not null");
         assertNotNull(calculadora   ,"Calculadora debe ser not null");
         System.out.println("@Test -> calcularNotNullTest()");
     }
 
     @Test
     void calcularNullTest() {
-        assertNotNull(calculadora   ,"Calculadora debe ser null");
+        //comprobamos que calculadora sea null
+        assertNotNull(calculadora,"Calculadora debe ser null");
         System.out.println("@Test -> calcularNullTest()");
     }
 
     @Test
-    void sumarAssert() {
+    void sumarAssertTest() {
         //1.SetUp
         Calculadora calculadora = new Calculadora();
         int esperado = 30;
@@ -65,20 +69,21 @@ class CalculadoraTest {
     }
 
     @Test
-    void sumar() {
+    //testeamos la suma
+    void sumarTest() {
         assertEquals(50, Calculadora.sumar(30,20));
     }
 
     @Test
-    void restar() {
+    void restarTest() {
+        //testeamos la resta
         int resultado = Calculadora.restar(3,2);
         int esperado = 1;
         assertEquals(resultado, esperado);
     }
 
 
-
-//probando muchos asserts
+    //probando muchos mas Asserts
     @Test
     void assertTypesTest() {
         assertTrue(1 == 1);
@@ -91,10 +96,8 @@ class CalculadoraTest {
         assertNotSame(calculadora1, calculadora2);
 
         assertEquals("alberto","alberto");
-        //assertEquals("alberto","albert", "Ha fallado niestro metodo String");
 
         assertEquals(1, 1.5 , 0.5);
-
     }
     /*______________________________________________________________________________________________________________________________*/
 
@@ -137,7 +140,6 @@ class CalculadoraTest {
     }
 
     // a pesar de que uno falle los otros no lo haran
-
     @Test
      public void addAssertAllTest (){
         assertAll(

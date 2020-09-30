@@ -1,4 +1,4 @@
-package com.example;
+package com.example.practicas;
 
 
 import org.junit.jupiter.api.AfterEach;

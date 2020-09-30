@@ -1,4 +1,7 @@
-package com.example;
+package com.example.practicas;
+
+import java.util.ArrayList;
+import java.util.Collections;
 
 /*
 Escriba un conjunto de pruebas para verificar el comportamiento de un método que recibe
@@ -13,21 +16,11 @@ Los valores de entrada son las dos listas ordenadas y el resultado obtenido es u
 Veamos qué combinaciones podemos hacer.
 */
 
-
-import org.junit.jupiter.params.provider.Arguments;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.stream.Stream;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 public class Listar {
 
     private ArrayList<Integer> listaResultante;
 
-    public Listar() {}
-
+    //Si las listas enviadas estan vacias devuelve una de la misma forma. Sino lanza un throw exception
     public ArrayList<Integer> Vacias (ArrayList <Integer>listaA , ArrayList <Integer> listaB) {
         if (listaA.size() == 0 && listaB.size() == 0) {
             return listaResultante = new ArrayList<>();
@@ -36,10 +29,10 @@ public class Listar {
         }
 
     }
+
+    //si una esta llena y la otra no, llega todo en la otra lista. Sino lanza un throw exception
     public ArrayList<Integer> Cruzadas (ArrayList <Integer>listaA , ArrayList <Integer> listaB){
-
         listaResultante = new ArrayList<>();
-
         if (listaA.size() > 0 && listaB.size() == 0) {
             listaA.forEach( x -> listaB.add(x));
             listaResultante = listaB;
@@ -52,10 +45,9 @@ public class Listar {
         return listaResultante;
     }
 
+    //ordena de menor a mayor una lista. Sino lanza un throw exception
     public ArrayList<Integer> ordenElementos (ArrayList <Integer>listaA){
-
        listaResultante = new ArrayList<>();
-
         if (listaA.size() > 0){
             Collections.sort(listaA);
             listaResultante = listaA;
@@ -66,20 +58,17 @@ public class Listar {
         return listaResultante;
     }
 
+    //orden de mayor a menor y pasa todo a la lista con mas cantidad. Sino lanza un throw exception
     public ArrayList<Integer> sumar_ordenar(ArrayList <Integer>listaA , ArrayList <Integer> listaB){
-
         listaResultante = new ArrayList<>();
-
         if (listaA.size() > listaB.size()){
             listaA.forEach( x -> listaB.add(x));
-            //listaB.sort((x,y)-> x.compareTo(y));
             Collections.sort(listaB);
             listaResultante = listaB;
         }else if  (listaA.size() < listaB.size()){
             listaB.forEach( x -> listaA.add(x));
             Collections.sort(listaA);
             listaResultante = listaA;
-            //listaA.sort((x,y)-> x.compareTo(y));
         }else{
             throw new ArrayIndexOutOfBoundsException("las listas son iguales");
         }

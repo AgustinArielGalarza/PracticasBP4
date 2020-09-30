@@ -1,4 +1,4 @@
-package com.example;
+package com.example.practicas;
 
 
 //Validar la clase Valida Mail que se sospecha que su funcionamiento no es esperado.
