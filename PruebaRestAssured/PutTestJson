@@ -1,0 +1,15 @@
+{
+  "nombre": "REST 2",
+  "apellido": "ssured 2",
+  "nickname": "RESTassured 2",
+  "img": null,
+  "empresa": "BP4 2",
+  "direccion": "asd 2",
+  "cuit": 1231231213,
+  "dni": 123123113,
+  "telefono": 1231213,
+  "role": "USER_ROLE",
+  "email": "rest@assured.com",
+  "cuit": 1233123,
+  "password": "123"
+}
