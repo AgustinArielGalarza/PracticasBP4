@@ -47,7 +47,7 @@ class EncenderTest {
     }
 
     @Test
-    public void darArranqueErrdorTest (){
+    public void darArranqueErrorTest (){
         doAnswer(new Answer() {
             @Override
             public Object answer(InvocationOnMock invocationOnMock) throws Throwable {

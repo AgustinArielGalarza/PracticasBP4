@@ -1,6 +1,4 @@
-package mockito;
-
-import java.util.Queue;
+package mockito.ejemplos;
 
 public class ValidaUsr {
 

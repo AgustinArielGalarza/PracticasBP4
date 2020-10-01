@@ -1,22 +1,6 @@
-package Request;
+Post Test
 
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
-//import org.json.JSONObject;
-import org.junit.Test;
-
-import java.io.File;
-import java.util.HashMap;
-
-import static io.restassured.RestAssured.*;
-import static org.junit.Assert.*;
-
-public class TestCreate {
-
-    @Test
-    public void postTest() {
-
-        // Existen distintas formas de pasarle la informacion en formato Json al Body.... ejemplo
+// Existen distintas formas de pasarle la informacion en formato Json al Body.... ejemplo
 
         //1. con los formParam("","") estos unicamente se pasara clave y valor en tipo String
                 /*Response resp = given()
@@ -73,24 +57,3 @@ public class TestCreate {
 
         //5. Con un archivo externo
         //.body(new File("./PutTestJson"))
-
-        Response resp = given()
-                .body(new File("./PostTestJson"))
-                .contentType(ContentType.JSON)
-                .post("http://localhost:3000/usuario");
-
-
-
-        //se puede imprimir de esta manera
-        resp.prettyPrint();
-
-        // y tambien de esta manera
-        /* String resJson = resp.asString();
-        System.out.println(resJson); */
-
-        //status de la peticion
-        System.out.println("Status code is: " + resp.statusCode());
-        //assertEquals al status. 200 en caso correcto
-        assertEquals(resp.statusCode(), 200);
-    }
-}

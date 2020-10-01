@@ -1,4 +1,4 @@
-package mockito;
+package mockito.ejemplos;
 
 public class Login {
 
