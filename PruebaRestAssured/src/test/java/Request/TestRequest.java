@@ -33,7 +33,7 @@ public class TestRequest {
     @Test
     public void post200Test() {
         Response resp = given()
-                .body(new File("./PostJson"))
+                .body(new File("./Json/PostJson"))
                 .contentType(ContentType.JSON)
                 .post("http://localhost:3000/usuario");
         resp.prettyPrint();
@@ -44,7 +44,7 @@ public class TestRequest {
     @Test
     public void post400Test() {
         Response resp = given()
-                .body(new File("./PostJson400"))
+                .body(new File("./Json/PostJson400"))
                 .contentType(ContentType.JSON)
                 .post("http://localhost:3000/usuario");
         resp.prettyPrint();
@@ -55,7 +55,7 @@ public class TestRequest {
     @Test
     public void post404Test() {
         Response resp = given()
-                .body(new File("./PostJson"))
+                .body(new File("./Json/PostJson"))
                 .contentType(ContentType.JSON)
                 .post("http://localhost:3000/usuari");
         resp.prettyPrint();
@@ -66,7 +66,7 @@ public class TestRequest {
     @Test
     public void legin200Test(){
         Response resp = given()                         //nos loguiamos para obtener el token de seguridad
-                .body(new File("./LoginJson"))
+                .body(new File("./Json/LoginJson"))
                 .contentType(ContentType.JSON)
                 .post("http://localhost:3000/login");
         resp.prettyPrint();
@@ -78,7 +78,7 @@ public class TestRequest {
     @Test
     public void legin404Test(){
         Response resp = given()                         //nos loguiamos para obtener el token de seguridad
-                .body(new File("./LoginJson"))
+                .body(new File("./Json/LoginJson"))
                 .contentType(ContentType.JSON)
                 .post("http://localhost:3000/logi");
         resp.prettyPrint();
@@ -90,7 +90,7 @@ public class TestRequest {
     @Test
     public void legin400Test(){
         Response resp = given()                         //nos loguiamos para obtener el token de seguridad
-                .body(new File("./LoginJson400"))
+                .body(new File("./Json/LoginJson400"))
                 .contentType(ContentType.JSON)
                 .post("http://localhost:3000/login");
         resp.prettyPrint();
@@ -102,7 +102,7 @@ public class TestRequest {
     @Test
     public void put200Test(){
         Response resp = given() //Es aqui donde tenemos que colocar como parametro el token de seguridad que generamos en el Login para que funcione el Put.
-                .body(new File("./PutJson"))
+                .body(new File("./Json/PutJson"))
                 .contentType(ContentType.JSON)
                 .put("http://localhost:3000/usuario/5f735943e005e218745aa19e?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InJvbGUiOiJVU0VSX1JPTEUiLCJfaWQiOiI1ZjczNTk0M2UwMDVlMjE4NzQ1YWExOWUiLCJub21icmUiOiJSRVNUIiwiYXBlbGxpZG8iOiJzc3VyZWQiLCJlbXByZXNhIjoiQlA0IiwiaW1nIjpudWxsLCJkaXJlY2Npb24iOiJhc2QiLCJjdWl0IjoiMTIzMzEyMyIsImRuaSI6IjEyMzEyMzExMyIsInRlbGVmb25vIjoiMTIzMTIxMyIsImVtYWlsIjoicmVzdEBhc3N1cmVkLmNvbSIsInBhc3N3b3JkIjoiPSkiLCJfX3YiOjB9LCJpYXQiOjE2MDEzOTUyNjksImV4cCI6MTYwMTQwOTY2OX0.Bg_1-l9IEglaNrNu2WiD8ZfUtng3p7PjOYusIjDKGoo");
         resp.prettyPrint();
@@ -113,7 +113,7 @@ public class TestRequest {
     @Test
     public void put404Test(){
         Response resp = given()
-                .body(new File("./PutJson"))
+                .body(new File("./Json/PutJson"))
                 .contentType(ContentType.JSON)
                 .put("http://localhost:3000/usuari/5f735943e005e218745aa19e?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InJvbGUiOiJVU0VSX1JPTEUiLCJfaWQiOiI1ZjczNTk0M2UwMDVlMjE4NzQ1YWExOWUiLCJub21icmUiOiJSRVNUIiwiYXBlbGxpZG8iOiJzc3VyZWQiLCJlbXByZXNhIjoiQlA0IiwiaW1nIjpudWxsLCJkaXJlY2Npb24iOiJhc2QiLCJjdWl0IjoiMTIzMzEyMyIsImRuaSI6IjEyMzEyMzExMyIsInRlbGVmb25vIjoiMTIzMTIxMyIsImVtYWlsIjoicmVzdEBhc3N1cmVkLmNvbSIsInBhc3N3b3JkIjoiPSkiLCJfX3YiOjB9LCJpYXQiOjE2MDEzOTUyNjksImV4cCI6MTYwMTQwOTY2OX0.Bg_1-l9IEglaNrNu2WiD8ZfUtng3p7PjOYusIjDKGoo");
         resp.prettyPrint();
@@ -124,7 +124,7 @@ public class TestRequest {
     @Test
     public void put400Test(){
         Response resp = given()
-                .body(new File("./PutJson"))
+                .body(new File("./Json/PutJson"))
                 .contentType(ContentType.JSON)
                 .put("http://localhost:3000/usuari/5f735943e00e218745aa19e?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InJvbGUiOiJVU0VSX1JPTEUiLCJfaWQiOiI1ZjczNTk0M2UwMDVlMjE4NzQ1YWExOWUiLCJub21icmUiOiJSRVNUIiwiYXBlbGxpZG8iOiJzc3VyZWQiLCJlbXByZXNhIjoiQlA0IiwiaW1nIjpudWxsLCJkaXJlY2Npb24iOiJhc2QiLCJjdWl0IjoiMTIzMzEyMyIsImRuaSI6IjEyMzEyMzExMyIsInRlbGVmb25vIjoiMTIzMTIxMyIsImVtYWlsIjoicmVzdEBhc3N1cmVkLmNvbSIsInBhc3N3b3JkIjoiPSkiLCJfX3YiOjB9LCJpYXQiOjE2MDEzOTUyNjksImV4cCI6MTYwMTQwOTY2OX0.Bg_1-l9IEglaNrNu2WiD8ZfUtng3p7PjOYusIjDKGoo");
         resp.prettyPrint();
